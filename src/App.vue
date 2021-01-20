@@ -1,26 +1,27 @@
+<script defer src="./scripts/toDo"></script>
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>ToDo App</h1>
+    <form @submit.prevent="addTodo()">
+        <label>New ToDo </label>
+        <input
+            v-model="newTodo"
+            name="newTodo"
+            autocomplete="off"
+        >
+        <button>Add ToDo</button>
+    </form>
+    <h2>ToDo List</h2>
+    <ul>
+        <li
+            v-for="(todo, index) in todos"
+            :key="index"
+        >
+            <span
+                :class="{ done: todo.done }"
+                @click="doneTodo(todo)"
+            >{{ todo.content }}</span>
+            <button @click="removeTodo(index)">Remove</button>
+        </li>
+    </ul>
+    <h4 v-if="todos.length === 0">Empty list.</h4>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
