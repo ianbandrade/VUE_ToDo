@@ -34,7 +34,7 @@
             const newTodo = ref('');
             const defaultData = [{
                 done: false,
-                content: 'Write a blog post'
+                content: 'Type a task! :)'
             }]
             const todosData = JSON.parse(localStorage.getItem('todos')) || defaultData;
 						const todos = ref(todosData);
