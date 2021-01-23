@@ -131,7 +131,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     h1 {
       font-weight: bold;
-      font-size: 28px;
+      font-size: 26px;
       text-align: center;
     }
     form {
