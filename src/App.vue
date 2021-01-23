@@ -1,7 +1,7 @@
 <template>
   <h1>ToDo App</h1>
   <form @submit.prevent="addTodo(), toastSuccess('Task added!')">
-    <label>New ToDo </label>
+    <label>New ToDo</label>
     <input
       @keydown.space.prevent
       v-model="newTodo"
@@ -70,7 +70,6 @@ export default {
 
     const doneTodo = (todo) => {
       todo.done = !todo.done;
-
       saveData();
     };
 
